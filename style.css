@@ -61,7 +61,6 @@ footer {
   text-align: center;
 }
 
-
 /* ELEMENTS STYLE */
 h1 {
   font-size: 2.8rem;
@@ -84,7 +83,6 @@ h2 {
 
 .message {
   font-size: 2rem;
-  
 }
 
 .number-centerer {
@@ -124,7 +122,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .back {
@@ -142,8 +140,13 @@ h2 {
   text-align: center;
   display: block;
   margin-bottom: 3rem;
+  transition: transform 0.3s ease-in-out;
 }
 
+.guess-animation {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
 .btn {
   border: none;
   background-color: #ffffff;
@@ -207,9 +210,7 @@ h2 {
   margin-left: 0;
 }
 
-
 @media (min-width: 768px) {
-
   h1 {
     font-size: 4rem;
   }
@@ -248,8 +249,6 @@ h2 {
   }
 }
 
-
-
 /* ANIMATIONS */
 .error-animation {
   background-color: #ce0f0f;
@@ -257,50 +256,68 @@ h2 {
   animation: kf_shake 0.4s 1 linear;
 }
 @keyframes kf_shake {
-  0% { transform: translate(30px); }
-  20% { transform: translate(-30px); }
-  40% { transform: translate(15px); }
-  60% { transform: translate(-15px); }
-  80% { transform: translate(8px); }
-  100% { transform: translate(0px); }
+  0% {
+    transform: translate(30px);
+  }
+  20% {
+    transform: translate(-30px);
+  }
+  40% {
+    transform: translate(15px);
+  }
+  60% {
+    transform: translate(-15px);
+  }
+  80% {
+    transform: translate(8px);
+  }
+  100% {
+    transform: translate(0px);
+  }
 }
-
-
 
 /* entire container, keeps perspective */
 .flip-container {
-	perspective: 1000px;
+  perspective: 1000px;
 }
-	/* flip the pane when hovered */
-	.flipper.reveal {
-		transform: rotateY(180deg);
-	}
+/* flip the pane when hovered */
+.flipper.reveal {
+  transform: rotateY(180deg);
+}
 
 /* flip speed goes here */
 .flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
 
-	position: relative;
+  position: relative;
 }
 
 /* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
+.front,
+.back {
+  backface-visibility: hidden;
 
-	position: absolute;
-	top: 0;
-	left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* front pane, placed above back */
 .front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
-	transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.success {
+  background-color: #60b347;
+}
+.fail {
+  background-color: #fa8072;
 }

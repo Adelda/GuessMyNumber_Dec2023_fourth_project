@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <button class="btn play-again">Rejouer</button>
+      <button class="btn play-again" onclick="rePlay()">Rejouer</button>
     </header>
     <main>
       <section class="section top-section">
@@ -23,7 +23,7 @@
               <img class="donkey-image" src="assets/donkey.png" alt="donkey">
             </div>
             <div class="back flipper-side">
-              <div class="secret-number">10</div>
+              <div class="secret-number"></div>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
       <section class="section bottom-section">
         <div class="form">
           <input type="number" class="guess" />
-          <button class="btn check">Vérfier</button>
+          <button class="btn check" onclick="onBtnClick()">Deviner</button>
         </div>
       </section>
     </main>
@@ -45,4 +45,4 @@
     </footer>
     <script src="script.js"></script>
   </body>
-</html>
+</html> 
